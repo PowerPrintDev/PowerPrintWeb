@@ -1,0 +1,518 @@
+{
+  "navbar": {
+    "links": [
+      {
+        "label": "Inicio",
+        "href": "#inicio"
+      },
+      {
+        "label": "Nosotros",
+        "href": "#nosotros"
+      },
+      {
+        "label": "Trabajos",
+        "href": "#trabajos"
+      },
+      {
+        "label": "Productos",
+        "href": "#productos"
+      }
+    ],
+    "logo": "/assets/logo.svg",
+    "contactHref": "#contacto",
+    "contactLabel": "Pedir presupuesto",
+    "logoWhite": "/uploads/1781837836198_4b070j.png"
+  },
+  "heroAndShowcase": {
+    "title": "Te ayudamos a materializar",
+    "highlight": "tu marca",
+    "categories": [
+      {
+        "id": "Marquesina",
+        "label": "Marquesina",
+        "title": "Marquesinas y Fachadas",
+        "description": "Estructuras corpóreas de soporte e iluminación LED para marquesinas frontales que garantizan máxima visibilidad nocturna."
+      },
+      {
+        "id": "Letras corpóreas",
+        "label": "Letras corpóreas",
+        "title": "Letras Corpóreas 3D",
+        "description": "Creamos letreros tridimensionales en acrílico, metal o madera, con retroiluminación premium para tu comercio."
+      },
+      {
+        "id": "Salientes peatonales",
+        "label": "Salientes peatonales",
+        "title": "Carteles Salientes Peatonales",
+        "description": "Soportes de doble faz metálicos y acrílicos para visualización peatonal en veredas de alto tránsito comercial."
+      },
+      {
+        "id": "Atriles de vereda",
+        "label": "Atriles de vereda",
+        "title": "Atriles y Caballetes",
+        "description": "Estructuras estables y portátiles para cartelería efímera de menús o promociones, ideales para locales gastronómicos."
+      },
+      {
+        "id": "Foodtrucks",
+        "label": "Foodtrucks",
+        "title": "Rotulación de Foodtrucks",
+        "description": "Diseños integrales con vinilos de alta calidad y marquesinas modulares adaptadas a vehículos y trailers comerciales."
+      }
+    ],
+    "cards": [
+      {
+        "src": "/assets/10dc229eeb96a4cabe5c251d305ef92ef93729fb.png",
+        "tag": "Letras corpóreas",
+        "heroDesktopX": -420,
+        "heroDesktopY": 34,
+        "heroMobileX": -130,
+        "heroMobileY": 20,
+        "heroRotate": -8.63,
+        "showcaseDesktopX": -120,
+        "showcaseDesktopY": -60,
+        "showcaseMobileX": -60,
+        "showcaseMobileY": -20,
+        "showcaseRotate": -10
+      },
+      {
+        "src": "/assets/41283939bd74a3453a06d1331bd20247bf8e8fcd.png",
+        "tag": "Atriles de vereda",
+        "heroDesktopX": -280,
+        "heroDesktopY": 10,
+        "heroMobileX": -85,
+        "heroMobileY": 6,
+        "heroRotate": -5.15,
+        "showcaseDesktopX": -120,
+        "showcaseDesktopY": -60,
+        "showcaseMobileX": -60,
+        "showcaseMobileY": -20,
+        "showcaseRotate": -10
+      },
+      {
+        "src": "/assets/34b6c149f3c5ab0ba816977fa7356cb327d3c695.png",
+        "tag": "Letras corpóreas",
+        "heroDesktopX": -140,
+        "heroDesktopY": 23,
+        "heroMobileX": -42,
+        "heroMobileY": 14,
+        "heroRotate": -2.34,
+        "showcaseDesktopX": 0,
+        "showcaseDesktopY": 0,
+        "showcaseMobileX": 0,
+        "showcaseMobileY": 0,
+        "showcaseRotate": 0
+      },
+      {
+        "src": "/assets/67f0e9cafad48b51ae943ed51f2c03b933ee477a.png",
+        "tag": "Foodtrucks",
+        "heroDesktopX": 0,
+        "heroDesktopY": 5,
+        "heroMobileX": 0,
+        "heroMobileY": 3,
+        "heroRotate": 1.02,
+        "showcaseDesktopX": -120,
+        "showcaseDesktopY": -60,
+        "showcaseMobileX": -60,
+        "showcaseMobileY": -20,
+        "showcaseRotate": -10
+      },
+      {
+        "src": "/assets/b1c41062b620e92fe7726e0274f898671941126c.png",
+        "tag": "Marquesina",
+        "heroDesktopX": 140,
+        "heroDesktopY": 23,
+        "heroMobileX": 42,
+        "heroMobileY": 14,
+        "heroRotate": 6.52,
+        "showcaseDesktopX": -120,
+        "showcaseDesktopY": -60,
+        "showcaseMobileX": -60,
+        "showcaseMobileY": -20,
+        "showcaseRotate": -10
+      },
+      {
+        "src": "/assets/47b1327b704ce6f68873f4bfd6d23ff098806982.png",
+        "tag": "Salientes peatonales",
+        "heroDesktopX": 280,
+        "heroDesktopY": 21,
+        "heroMobileX": 85,
+        "heroMobileY": 12,
+        "heroRotate": 14.95,
+        "showcaseDesktopX": -120,
+        "showcaseDesktopY": -60,
+        "showcaseMobileX": -60,
+        "showcaseMobileY": -20,
+        "showcaseRotate": -10
+      },
+      {
+        "src": "/assets/9e26891257a92e1efedb953ccda1b6d003f0894b.png",
+        "tag": "Marquesina",
+        "heroDesktopX": 420,
+        "heroDesktopY": 33,
+        "heroMobileX": 130,
+        "heroMobileY": 19,
+        "heroRotate": 22.22,
+        "showcaseDesktopX": 0,
+        "showcaseDesktopY": 0,
+        "showcaseMobileX": 0,
+        "showcaseMobileY": 0,
+        "showcaseRotate": 0
+      },
+      {
+        "src": "/assets/4d7146a3b6b4351a4ed6555a37ea662e6640e4f0.png",
+        "tag": "Letras corpóreas",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 120,
+        "showcaseDesktopY": 60,
+        "showcaseMobileX": 60,
+        "showcaseMobileY": 20,
+        "showcaseRotate": 10
+      },
+      {
+        "src": "/assets/41283939bd74a3453a06d1331bd20247bf8e8fcd.png",
+        "tag": "Atriles de vereda",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 0,
+        "showcaseDesktopY": 0,
+        "showcaseMobileX": 0,
+        "showcaseMobileY": 0,
+        "showcaseRotate": 0
+      },
+      {
+        "src": "/assets/41283939bd74a3453a06d1331bd20247bf8e8fcd.png",
+        "tag": "Atriles de vereda",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 120,
+        "showcaseDesktopY": 60,
+        "showcaseMobileX": 60,
+        "showcaseMobileY": 20,
+        "showcaseRotate": 10
+      },
+      {
+        "src": "/assets/67f0e9cafad48b51ae943ed51f2c03b933ee477a.png",
+        "tag": "Foodtrucks",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 0,
+        "showcaseDesktopY": 0,
+        "showcaseMobileX": 0,
+        "showcaseMobileY": 0,
+        "showcaseRotate": 0
+      },
+      {
+        "src": "/assets/67f0e9cafad48b51ae943ed51f2c03b933ee477a.png",
+        "tag": "Foodtrucks",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 120,
+        "showcaseDesktopY": 60,
+        "showcaseMobileX": 60,
+        "showcaseMobileY": 20,
+        "showcaseRotate": 10
+      },
+      {
+        "src": "/assets/0e95ea7680b1be37bf01a1c8bf22a56029fa21a7.png",
+        "tag": "Marquesina",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 120,
+        "showcaseDesktopY": 60,
+        "showcaseMobileX": 60,
+        "showcaseMobileY": 20,
+        "showcaseRotate": 10
+      },
+      {
+        "src": "/assets/47b1327b704ce6f68873f4bfd6d23ff098806982.png",
+        "tag": "Salientes peatonales",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 0,
+        "showcaseDesktopY": 0,
+        "showcaseMobileX": 0,
+        "showcaseMobileY": 0,
+        "showcaseRotate": 0
+      },
+      {
+        "src": "/assets/47b1327b704ce6f68873f4bfd6d23ff098806982.png",
+        "tag": "Salientes peatonales",
+        "heroDesktopX": 0,
+        "heroDesktopY": 0,
+        "heroMobileX": 0,
+        "heroMobileY": 0,
+        "heroRotate": 0,
+        "showcaseDesktopX": 120,
+        "showcaseDesktopY": 60,
+        "showcaseMobileX": 60,
+        "showcaseMobileY": 20,
+        "showcaseRotate": 10
+      }
+    ],
+    "tagline": "Power Print & Graphic Solutions"
+  },
+  "clientLogos": {
+    "title": "La confianza de nuestros clientes nos respalda",
+    "description": "Organizaciones líderes transforman sus operaciones y obtienen resultados medibles mediante nuestras plataformas y servicios.",
+    "logos": [
+      {
+        "src": "/assets/251feb82890955089f33f0444a853122d80c9e0d.png",
+        "alt": "Client Logo 1",
+        "width": 96
+      },
+      {
+        "src": "/assets/0105aecbaaa703ae13644d8e3c7ac75390f947a9.png",
+        "alt": "Client Logo 2",
+        "width": 111
+      },
+      {
+        "src": "/assets/da03228ad1d2d05e464fe00db4b9fcdb842ee773.png",
+        "alt": "Client Logo 3",
+        "width": 189
+      },
+      {
+        "src": "/assets/d5ba096747838f29ae11487293a638d3704d43c6.png",
+        "alt": "Client Logo 4",
+        "width": 127
+      },
+      {
+        "src": "/assets/628d0b757003e98f9427c645354850f34e309611.png",
+        "alt": "Client Logo 5",
+        "width": 120
+      },
+      {
+        "src": "/assets/e2ab0b2b4fd4ec86e24ad6de94258101e4cc801c.png",
+        "alt": "Client Logo 6",
+        "width": 105
+      },
+      {
+        "src": "/assets/bc9f4d73718cbe673df90ed2e6bb1dd26e32b15c.png",
+        "alt": "Client Logo 7",
+        "width": 175
+      },
+      {
+        "src": "/assets/8bc9b95e8a1f1f4abae3f46cbcc40c6dba4b967d.png",
+        "alt": "Client Logo 8",
+        "width": 105
+      },
+      {
+        "src": "/assets/12513b5b3d234486e92be05984e1492f3fa635f2.png",
+        "alt": "Client Logo 9",
+        "width": 187
+      },
+      {
+        "src": "/assets/4e3542ad173e1c36958ace8998bf51f347470c4e.png",
+        "alt": "Client Logo 10",
+        "width": 125
+      }
+    ]
+  },
+  "successStories": {
+    "title": "Casos de éxito",
+    "stories": [
+      {
+        "logo": "/assets/83ee8974bc0726865bf381144c9e3d2e353d8317.png",
+        "title": "Un reto increíble",
+        "description": "Trabajamos junto a grandes marcas para rediseñar su presencia en puntos de venta físicos, instalando cartelería corpórea y marquesinas de alta gama que redefinen la experiencia visual del cliente.",
+        "badge": "Marquesina Premium",
+        "mockups": [
+          "/assets/9e26891257a92e1efedb953ccda1b6d003f0894b.png",
+          "/assets/4d7146a3b6b4351a4ed6555a37ea662e6640e4f0.png",
+          "/assets/0e95ea7680b1be37bf01a1c8bf22a56029fa21a7.png"
+        ]
+      },
+      {
+        "logo": "/assets/628d0b757003e98f9427c645354850f34e309611.png",
+        "title": "Identidad Visual Total",
+        "description": "Creamos un ecosistema publicitario completo desde carpintería metálica hasta impresión gigantográfica, permitiendo que la marca logre un impacto visual coherente y masivo en todo el país.",
+        "badge": "Herrería & Cartelería",
+        "mockups": [
+          "/assets/34b6c149f3c5ab0ba816977fa7356cb327d3c695.png",
+          "/assets/41283939bd74a3453a06d1331bd20247bf8e8fcd.png",
+          "/assets/10dc229eeb96a4cabe5c251d305ef92ef93729fb.png"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "subtitle": "Nuestros servicios",
+    "title": "Todo lo que necesitas para destacar tu negocio",
+    "description": "Descubre nuestra amplia gama de productos y los diferentes tipos de soluciones que ofrecemos para potenciar tu marca.",
+    "servicesList": [
+      {
+        "img": "/assets/23ea9f77ca4de1459981e27a1c4bcd34d84057d0.png",
+        "title": "Impresión de alta calidad",
+        "desc": "Utilizamos tecnología de vanguardia para garantizar la máxima fidelidad en la impresión de tus carteles, logrando resultados profesionales de alta durabilidad."
+      },
+      {
+        "img": "/assets/386700c0b6c1b042c85c64c0001eb60dd9c2b512.png",
+        "title": "Diseños personalizados",
+        "desc": "Creamos piezas publicitarias únicas que se adaptan a las necesidades específicas de tu local o campaña y reflejan con precisión la identidad de tu marca."
+      },
+      {
+        "img": "/assets/42ffb1fd2303f89c19988e63d839950ff4417deb.png",
+        "title": "Envíos a todo el país",
+        "desc": "Llegamos a cualquier punto del territorio nacional, garantizando que tus carteles lleguen en perfectas condiciones y conservando la mejor calidad del mercado."
+      }
+    ]
+  },
+  "factoryTour": {
+    "subtitle": "Conoce nuestra fábrica",
+    "title": "Producción propia de punta a punta",
+    "description": "Contamos con producción propia, lo que nos permite garantizar el control total de calidad y los mejores precios del mercado.",
+    "departments": [
+      {
+        "id": "diseno",
+        "name": "Diseño",
+        "title": "Área de Diseño Conceptual",
+        "desc": "Nuestros creativos adaptan los bocetos de tu marca a formatos digitales de alta fidelidad, asegurando una traslación perfecta y profesional al tamaño real.",
+        "img": "/assets/186f19f99da670a0c87377b2f1b1c17233cb7e79.png",
+        "top": "174px",
+        "left": "206px",
+        "mobileTop": "84px",
+        "mobileLeft": "100px"
+      },
+      {
+        "id": "impresion",
+        "name": "Impresión",
+        "title": "Área de Impresión de Gran Formato",
+        "desc": "Maquinaria de última generación estampa tintas de alta duración y resistencia UV sobre lonas, vinilos, acrílicos y soportes rígidos.",
+        "img": "/assets/ec1fd429d5a47b9f45735f34b25eff014d835a8b.png",
+        "top": "62px",
+        "left": "492px",
+        "mobileTop": "30px",
+        "mobileLeft": "238px"
+      },
+      {
+        "id": "carpinteria",
+        "name": "Carpintería",
+        "title": "Taller de Carpintería Publicitaria",
+        "desc": "Fabricamos estructuras rígidas, bastidores de madera y stands a medida para exposiciones interiores y colocación de marquesinas.",
+        "img": "/assets/39e974e38ca5ad5a392cb39e57ca0e1605a1929e.png",
+        "top": "278px",
+        "left": "407px",
+        "mobileTop": "134px",
+        "mobileLeft": "197px"
+      },
+      {
+        "id": "herreria",
+        "name": "Herrería",
+        "title": "Herrería y Estructuras de Soporte",
+        "desc": "Forjamos y soldamos chasis metálicos reforzados, perfiles de hierro y soportes estructurales de alta resistencia para cartelería exterior.",
+        "img": "/assets/875428c385668a49d9dd8ba3cf81580739e3d7b7.png",
+        "top": "236px",
+        "left": "625px",
+        "mobileTop": "114px",
+        "mobileLeft": "302px"
+      },
+      {
+        "id": "transporte",
+        "name": "Transporte",
+        "title": "Logística y Montaje Final",
+        "desc": "Contamos con flota propia equipada y técnicos altamente calificados para realizar el traslado seguro e instalación en tu local comercial.",
+        "img": "/assets/91fe9e72102bf97f7a0b2c6a1250358c294103ae.png",
+        "top": "324px",
+        "left": "24px",
+        "mobileTop": "156px",
+        "mobileLeft": "12px"
+      }
+    ]
+  },
+  "ctaSection": {
+    "backgroundImage": "/uploads/1781838202227_brikz4.png",
+    "logoTypo": "/assets/6364e84f25bbf1aef51f6487142d70da01db4533.svg",
+    "titlePrefix": "Potencia",
+    "highlight": "tu marca",
+    "titleSuffix": "con nosotros",
+    "worksHref": "#trabajos",
+    "contactHref": "#contacto",
+    "title": "Potencia *tu marca* con nosotros"
+  },
+  "faqSection": {
+    "subtitle": "Preguntas frecuentes",
+    "title": "¿Tienes dudas? Nosotros te las resolvemos",
+    "description": "Encuentre respuestas a las consultas más comunes sobre nuestras soluciones, servicios y el soporte técnico postventa.",
+    "faqs": [
+      {
+        "question": "¿Hacen envíos?",
+        "answer": "Sí, realizamos envíos embalados y asegurados a todo el territorio nacional para asegurar que tus carteles y estructuras lleguen en óptimas condiciones."
+      },
+      {
+        "question": "¿Cómo es el proceso de contratación?",
+        "answer": "El proceso es simple: solicitas una cotización, nuestro equipo de diseño te presenta una propuesta visual en base a tus requisitos, y tras tu aprobación, procedemos con la fabricación e instalación final."
+      },
+      {
+        "question": "¿Las medidas del local vienen de su parte?",
+        "answer": "Sí, contamos con un equipo técnico especializado que puede acercarse a tu local para realizar el relevamiento de medidas y comprobar las condiciones estructurales de la fachada."
+      },
+      {
+        "question": "¿Cuáles son los métodos de pago aceptados?",
+        "answer": "Aceptamos transferencias bancarias directas, pagos con tarjetas de débito/crédito, cheques comerciales y planes de financiación especiales para franquicias o compras corporativas."
+      },
+      {
+        "question": "¿Ofrecen descuentos por compras al por mayor?",
+        "answer": "Sí, disponemos de tarifas escalonadas con bonificaciones especiales para cartelería corporativa masiva, cadenas de tiendas y compras al por mayor."
+      },
+      {
+        "question": "¿Puedo personalizar los productos según mis necesidades?",
+        "answer": "Totalmente. Todo nuestro trabajo se realiza bajo pedido y a medida, adaptando las dimensiones, iluminación LED, materiales y herrajes según lo solicite tu marca."
+      },
+      {
+        "question": "¿Cuál es el tiempo estimado de entrega?",
+        "answer": "El tiempo estimado de entrega suele ser de 7 a 15 días hábiles, variando según las dimensiones, la complejidad estructural y la demanda de producción."
+      },
+      {
+        "question": "¿Tienen servicio postventa o garantía?",
+        "answer": "Sí, todas nuestras fabricaciones e instalaciones cuentan con garantía escrita que respalda la calidad del material y el montaje contra cualquier defecto de mano de obra."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Power Print & Graphic Solutions",
+    "social": [
+      {
+        "name": "Instagram",
+        "href": "https://instagram.com"
+      },
+      {
+        "name": "Facebook",
+        "href": "https://facebook.com"
+      },
+      {
+        "name": "WhatsApp",
+        "href": "https://wa.me/something"
+      }
+    ]
+  },
+  "theme": {
+    "background": "#faf9fa",
+    "foreground": "#19191a",
+    "neutral50": "#faf9fa",
+    "neutral900": "#19191a",
+    "orangeMain": "#f68322",
+    "orange600": "#e7630f",
+    "orange700": "#bf4b0f",
+    "redMain": "#f53722"
+  }
+}
