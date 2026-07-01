@@ -2977,6 +2977,7 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
                               <option value="tel">Teléfono</option>
                               <option value="textarea">Área de texto</option>
                               <option value="select">Menú desplegable</option>
+                              <option value="file">Archivo / Adjunto</option>
                             </select>
                           </td>
                           <td className="py-3 px-4">
@@ -3078,10 +3079,22 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
                                 const matchedField = content.contactPage?.formFields?.find((f: any) => f.id === key);
                                 const label = matchedField ? matchedField.label : key;
                                 if (!value || (typeof value === "string" && value.trim() === "")) return null;
+                                const isFileUrl = typeof value === "string" && (value.startsWith("/uploads/") || value.startsWith("http"));
                                 return (
                                   <div key={key} className="text-sm">
                                     <span className="text-neutral-400 font-bold block text-xs uppercase tracking-wider">{label}</span>
-                                    <span className="text-neutral-200 mt-0.5 block whitespace-pre-wrap">{String(value)}</span>
+                                    {isFileUrl ? (
+                                      <a
+                                        href={value}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-orange-main hover:underline mt-1.5 block font-bold text-xs inline-flex items-center gap-1 bg-white/5 border border-white/10 rounded px-2.5 py-1 hover:bg-white/10 transition-all duration-200"
+                                      >
+                                        <span>Descargar archivo</span>
+                                      </a>
+                                    ) : (
+                                      <span className="text-neutral-200 mt-0.5 block whitespace-pre-wrap">{String(value)}</span>
+                                    )}
                                   </div>
                                 );
                               })}

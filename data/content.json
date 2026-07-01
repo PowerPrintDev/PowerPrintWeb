@@ -376,7 +376,7 @@
           "/assets/4d7146a3b6b4351a4ed6555a37ea662e6640e4f0.png",
           "/assets/0e95ea7680b1be37bf01a1c8bf22a56029fa21a7.png"
         ],
-        "contentMarkdown": "# Detalle del Proceso de Diseño\nComenzamos el proyecto analizando la identidad de marca de la franquicia y diseñando bocetos digitales tridimensionales...\n\n## Estructura Metálica y Acabados\nPara el montaje, empleamos herrería reforzada...\n\n![Nuestra herrería de alta precisión](/assets/34b6c149f3c5ab0ba816977fa7356cb327d3c695.png)\n\n## Video del Cartel Terminado\nAquí puedes ver cómo funciona la iluminación LED por la noche:\n\n@[Iluminación LED de cartel](https://player.vimeo.com/video/826887823)\n"
+        "contentMarkdown": "# Detalle del Proceso de Diseño\n\nComenzamos el proyecto analizando la identidad de marca de la franquicia y diseñando bocetos digitales tridimensionales...\n\n## Estructura Metálica y Acabados\nPara el montaje, empleamos herrería reforzada...\n\n![Nuestra herrería de alta precisión](/assets/34b6c149f3c5ab0ba816977fa7356cb327d3c695.png)\n\n## Video del Cartel Terminado\nAquí puedes ver cómo funciona la iluminación LED por la noche:\n\n@[Iluminación LED de cartel](https://player.vimeo.com/video/826887823)\n"
       },
       {
         "logo": "/assets/628d0b757003e98f9427c645354850f34e309611.png",
@@ -422,7 +422,7 @@
       {
         "id": "diseno",
         "name": "Diseño",
-        "title": "Área de Diseño Conceptual",
+        "title": "Área de Diseño ",
         "desc": "Nuestros creativos adaptan los bocetos de tu marca a formatos digitales de alta fidelidad, asegurando una traslación perfecta y profesional al tamaño real.",
         "img": "/assets/Fabric/Diseño.png",
         "top": "278px",
@@ -553,7 +553,7 @@
     "foreground": "#19191a",
     "neutral50": "#faf9fa",
     "neutral900": "#19191a",
-    "orangeMain": "#f68322",
+    "orangeMain": "#F68322",
     "orange600": "#e7630f",
     "orange700": "#bf4b0f",
     "redMain": "#f53722"
@@ -782,7 +782,8 @@
     ],
     "testimonialHeader": {
       "pill": "Lo que dicen nuestros clientes",
-      "title": "Resultados que se ven en cada local"
+      "title": "Resultados que se ven en cada local",
+      "googleReviewsUrl": "https://www.google.com/maps/place/Power+Print+%7C+Graphic+Solutions/@-34.6458552,-58.4934772,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcc9a12f741e13:0x16398bc87e816d4!8m2!3d-34.6458552!4d-58.4909023!16s%2Fg%2F11gbx9grd8?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D"
     },
     "testimonials": [
       {
@@ -812,17 +813,12 @@
       "subtitle": "Completá el formulario o escribinos por nuestras redes. Nos pondremos en contacto a la brevedad."
     },
     "destinationEmail": "contacto@powerprint.com",
-    "mapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0167132768468!2d-58.383759024259834!3d-34.60373887295175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa2261907b28e87%3A0x11859edd396e1192!2sEl%20Obelisco!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar",
+    "mapIframe": "https://www.google.com/maps/place/Power+Print+%7C+Graphic+Solutions/@-34.6458552,-58.4934772,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcc9a12f741e13:0x16398bc87e816d4!8m2!3d-34.6458552!4d-58.4909023!16s%2Fg%2F11gbx9grd8?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D",
     "socials": [
       {
         "name": "Instagram",
         "href": "https://instagram.com/powerprint",
         "value": "@powerprint"
-      },
-      {
-        "name": "Facebook",
-        "href": "https://facebook.com/powerprint",
-        "value": "Power Print"
       },
       {
         "name": "WhatsApp",

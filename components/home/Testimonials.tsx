@@ -10,6 +10,7 @@ interface Testimonial {
 interface TestimonialHeader {
   pill?: string;
   title?: string;
+  googleReviewsUrl?: string;
 }
 
 interface TestimonialsProps {
@@ -33,6 +34,17 @@ export default function Testimonials({ testimonials, header }: TestimonialsProps
           <h2 className="text-3xl md:text-4xl font-black text-white">
             {header?.title || "Resultados que se ven en cada local"}
           </h2>
+          {header?.googleReviewsUrl && (
+            <a
+              href={header.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-extrabold text-orange-main hover:text-orange-400 inline-flex items-center gap-1.5 transition-all duration-200 mt-2 select-none hover:scale-[1.02] active:scale-95 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-full shadow-lg shadow-orange-950/20 cursor-pointer"
+            >
+              <span>Ver todas las opiniones en Google</span>
+              <span className="text-xs font-black">→</span>
+            </a>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-2">

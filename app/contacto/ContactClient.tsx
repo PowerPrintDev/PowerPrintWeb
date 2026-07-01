@@ -6,14 +6,14 @@ import Footer from "@/components/home/Footer";
 import CTASection from "@/components/home/CTASection";
 import { 
   Mail, 
-  Phone, 
   MapPin, 
   Send, 
   CheckCircle2, 
   AlertCircle, 
   Loader2, 
   MessageCircle,
-  HelpCircle
+  HelpCircle,
+  Upload
 } from "lucide-react";
 
 const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -92,10 +92,22 @@ export default function ContactClient({ content }: ContactClientProps) {
   };
 
   const [formData, setFormData] = useState<Record<string, string>>({});
+  const [fileData, setFileData] = useState<Record<string, File | null>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const handleFileChange = (id: string, file: File | null) => {
+    setFileData(prev => ({ ...prev, [id]: file }));
+    if (errors[id]) {
+      setErrors(prev => {
+        const next = { ...prev };
+        delete next[id];
+        return next;
+      });
+    }
+  };
 
   const activeFields = contactPage.formFields.filter(f => f.enabled);
 
@@ -119,9 +131,16 @@ export default function ContactClient({ content }: ContactClientProps) {
     // Client side validation
     const newErrors: Record<string, string> = {};
     for (const field of activeFields) {
-      const val = formData[field.id];
-      if (field.required && (!val || val.trim() === "")) {
-        newErrors[field.id] = `El campo "${field.label}" es obligatorio.`;
+      if (field.type === "file") {
+        const file = fileData[field.id];
+        if (field.required && !file) {
+          newErrors[field.id] = `El campo "${field.label}" es obligatorio.`;
+        }
+      } else {
+        const val = formData[field.id];
+        if (field.required && (!val || val.trim() === "")) {
+          newErrors[field.id] = `El campo "${field.label}" es obligatorio.`;
+        }
       }
     }
 
@@ -132,10 +151,22 @@ export default function ContactClient({ content }: ContactClientProps) {
     }
 
     try {
+      const formDataToSend = new FormData();
+      for (const field of activeFields) {
+        if (field.type === "file") {
+          const file = fileData[field.id];
+          if (file) {
+            formDataToSend.append(field.id, file);
+          }
+        } else {
+          const val = formData[field.id] || "";
+          formDataToSend.append(field.id, val);
+        }
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
       });
 
       const result = await response.json();
@@ -143,6 +174,7 @@ export default function ContactClient({ content }: ContactClientProps) {
       if (response.ok && result.success) {
         setSubmitStatus("success");
         setFormData({});
+        setFileData({});
       } else {
         setSubmitStatus("error");
         setErrorMessage(result.error || "Ocurrió un error al enviar el formulario.");
@@ -245,7 +277,7 @@ export default function ContactClient({ content }: ContactClientProps) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {activeFields.map((field) => {
-                    const isFullWidth = field.type === "textarea";
+                    const isFullWidth = field.type === "textarea" || field.type === "file";
                     const fieldElement = (
                       <div key={field.id} className={`flex flex-col gap-2 ${isFullWidth ? "md:col-span-2" : ""}`}>
                         <label htmlFor={field.id} className="text-sm font-extrabold text-neutral-700 flex items-center gap-1">
@@ -275,6 +307,35 @@ export default function ContactClient({ content }: ContactClientProps) {
                               <option key={opt} value={opt}>{opt}</option>
                             ))}
                           </select>
+                        ) : field.type === "file" ? (
+                          <div className="relative flex flex-col items-center justify-center w-full min-h-[110px] border-2 border-dashed border-neutral-200 hover:border-orange-main/50 rounded-2xl cursor-pointer bg-neutral-50/30 hover:bg-orange-50/10 transition-all duration-200 px-4 py-5 text-center">
+                            <input
+                              id={field.id}
+                              type="file"
+                              onChange={(e) => handleFileChange(field.id, e.target.files?.[0] || null)}
+                              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            />
+                            <Upload className="w-8 h-8 text-neutral-400 mb-2" />
+                            <span className="text-sm font-bold text-neutral-700">
+                              {fileData[field.id] ? fileData[field.id]!.name : (field.placeholder || "Seleccionar o arrastrar archivo")}
+                            </span>
+                            <span className="text-xs text-neutral-400 mt-1 font-semibold">
+                              {fileData[field.id] ? `${(fileData[field.id]!.size / 1024 / 1024).toFixed(2)} MB` : "Archivos de hasta 10MB"}
+                            </span>
+                            {fileData[field.id] && (
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  handleFileChange(field.id, null);
+                                }}
+                                className="mt-2.5 text-xs font-extrabold text-red-600 hover:text-red-500 underline cursor-pointer relative z-10"
+                              >
+                                Quitar archivo
+                              </button>
+                            )}
+                          </div>
                         ) : (
                           <input
                             id={field.id}
