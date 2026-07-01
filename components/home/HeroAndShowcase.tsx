@@ -475,7 +475,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
                 Trabajos
               </a>
               <a
-                href="#contacto"
+                href="/contacto"
                 className="w-full sm:w-[250px] py-4 flex items-center justify-center gap-2 font-bold text-lg rounded-xl bg-orange-main text-white hover:opacity-95 shadow-lg shadow-orange-main/20 transition-all duration-200"
               >
                 <MessageCircle className="w-6 h-6 text-white" />

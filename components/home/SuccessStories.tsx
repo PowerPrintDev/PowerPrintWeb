@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 type SuccessStory = {
@@ -23,25 +24,25 @@ export default function SuccessStories({ data }: SuccessStoriesProps) {
 
   const stories: SuccessStory[] = data?.stories || [
     {
-      logo: "/assets/83ee8974bc0726865bf381144c9e3d2e353d8317.png", // Image 11
+      logo: "/assets/83ee8974bc0726865bf381144c9e3d2e353d8317.png",
       title: "Un reto increíble",
       description: "Trabajamos junto a grandes marcas para rediseñar su presencia en puntos de venta físicos, instalando cartelería corpórea y marquesinas de alta gama que redefinen la experiencia visual del cliente.",
       badge: "Marquesina Premium",
       mockups: [
-        "/assets/9e26891257a92e1efedb953ccda1b6d003f0894b.png", // Muestra 01
-        "/assets/4d7146a3b6b4351a4ed6555a37ea662e6640e4f0.png", // img283A860F...
-        "/assets/0e95ea7680b1be37bf01a1c8bf22a56029fa21a7.png", // img2434...
+        "/assets/9e26891257a92e1efedb953ccda1b6d003f0894b.png",
+        "/assets/4d7146a3b6b4351a4ed6555a37ea662e6640e4f0.png",
+        "/assets/0e95ea7680b1be37bf01a1c8bf22a56029fa21a7.png",
       ]
     },
     {
-      logo: "/assets/628d0b757003e98f9427c645354850f34e309611.png", // Image 5
+      logo: "/assets/628d0b757003e98f9427c645354850f34e309611.png",
       title: "Identidad Visual Total",
       description: "Creamos un ecosistema publicitario completo desde carpintería metálica hasta impresión gigantográfica, permitiendo que la marca logre un impacto visual coherente y masivo en todo el país.",
       badge: "Herrería & Cartelería",
       mockups: [
-        "/assets/34b6c149f3c5ab0ba816977fa7356cb327d3c695.png", // Muestra 05
-        "/assets/41283939bd74a3453a06d1331bd20247bf8e8fcd.png", // Muestra 06
-        "/assets/10dc229eeb96a4cabe5c251d305ef92ef93729fb.png", // Muestra 07
+        "/assets/34b6c149f3c5ab0ba816977fa7356cb327d3c695.png",
+        "/assets/41283939bd74a3453a06d1331bd20247bf8e8fcd.png",
+        "/assets/10dc229eeb96a4cabe5c251d305ef92ef93729fb.png",
       ]
     }
   ];
@@ -124,13 +125,13 @@ export default function SuccessStories({ data }: SuccessStoriesProps) {
 
             {/* Buttons & Link */}
             <div className="flex items-center gap-4 mt-2">
-              <a
-                href="#contacto"
-                className="bg-orange-main hover:bg-orange-600 px-6 py-3 rounded-lg text-white font-bold text-sm md:text-base flex items-center gap-2 transition-all duration-200 shadow-md shadow-orange-main/10 cursor-pointer"
+              <Link
+                href={`/casos-de-exito/${activeStory}`}
+                className="bg-orange-main hover:bg-orange-600 px-6 py-3 rounded-lg text-white font-bold text-sm md:text-base flex items-center gap-2 transition-all duration-200 shadow-md shadow-orange-main/10 cursor-pointer border-none"
               >
                 <span>Ver más</span>
                 <ArrowUpRight className="w-5 h-5 text-white" />
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 interface FooterProps {
   data?: {
     tagline?: string;
@@ -9,6 +12,14 @@ interface FooterProps {
 
 export default function Footer({ data }: FooterProps) {
   const tagline = data?.tagline || "Power Print & Graphic Solutions";
+  const pathname = usePathname();
+
+  const resolveHref = (href: string) => {
+    if (pathname !== "/" && href.startsWith("#")) {
+      return `/${href}`;
+    }
+    return href;
+  };
 
   return (
     <footer className="w-full bg-neutral-950 text-white py-12 px-6 md:px-24 border-t border-white/5 font-sans">
@@ -25,16 +36,16 @@ export default function Footer({ data }: FooterProps) {
 
         {/* Quick Links */}
         <nav className="flex flex-wrap justify-center gap-6 text-sm text-neutral-400 font-semibold">
-          <a href="#inicio" className="hover:text-white transition-colors duration-200">Inicio</a>
-          <a href="#nosotros" className="hover:text-white transition-colors duration-200">Nosotros</a>
-          <a href="#trabajos" className="hover:text-white transition-colors duration-200">Trabajos</a>
-          <a href="#productos" className="hover:text-white transition-colors duration-200">Productos</a>
+          <Link href={resolveHref("/")} className="hover:text-white transition-colors duration-200">Inicio</Link>
+          <Link href={resolveHref("/nosotros")} className="hover:text-white transition-colors duration-200">Nosotros</Link>
+          <Link href={resolveHref("/trabajos")} className="hover:text-white transition-colors duration-200">Trabajos</Link>
+          <Link href={resolveHref("#productos")} className="hover:text-white transition-colors duration-200">Productos</Link>
         </nav>
 
         {/* Contact/Social Details */}
         <div id="contacto" className="flex flex-col items-center md:items-end gap-2 text-xs md:text-sm text-neutral-400">
           <p className="font-semibold text-neutral-200">¿Tienes un proyecto en mente?</p>
-          <a href="mailto:info@powerprint.com" className="hover:text-white text-orange-main font-bold transition-colors duration-200">
+          <a href="mailto:contacto@powerprint.com" className="hover:text-white text-orange-main font-bold transition-colors duration-200">
             contacto@powerprint.com
           </a>
           <p className="text-[11px] text-neutral-500">© {new Date().getFullYear()} {tagline}. Todos los derechos reservados.</p>
