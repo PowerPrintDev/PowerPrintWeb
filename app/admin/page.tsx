@@ -15,7 +15,8 @@ export default async function AdminPage() {
     redirect("/admin/login");
   }
 
-  const content = await getContent();
+  const content = (await getContent()) || {};
 
   return <AdminPanel initialContent={content} />;
 }
+
