@@ -40,7 +40,14 @@ export async function getContent() {
     });
 
     if (rows && rows.length > 0) {
-      return JSON.parse(rows[0].value);
+      try {
+        const dbContent = JSON.parse(rows[0].value);
+        if (dbContent && typeof dbContent === "object" && Object.keys(dbContent).length > 2) {
+          return dbContent;
+        }
+      } catch (e) {
+        console.error("Error parsing database content:", e);
+      }
     }
 
     // If not found in DB (e.g., first run), load from local file and initialize DB
