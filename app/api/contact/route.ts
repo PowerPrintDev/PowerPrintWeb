@@ -1,6 +1,7 @@
+import { getContent } from "@/app/lib/content";
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
 import path from "path";
+import fs from "fs/promises";
 
 export async function POST(request: Request) {
   try {
@@ -9,9 +10,7 @@ export async function POST(request: Request) {
     const errors: Record<string, string> = {};
 
     // 1. Read content.json to get form fields validation rules
-    const contentPath = path.join(process.cwd(), "data", "content.json");
-    const contentData = await fs.readFile(contentPath, "utf8");
-    const content = JSON.parse(contentData);
+    const content = await getContent();
     
     const contactPage = content.contactPage || {};
     const formFields = contactPage.formFields || [];

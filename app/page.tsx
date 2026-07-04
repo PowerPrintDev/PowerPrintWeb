@@ -1,5 +1,3 @@
-import fs from "fs/promises";
-import path from "path";
 import Navbar from "@/components/home/Navbar";
 import HeroAndShowcase from "@/components/home/HeroAndShowcase";
 import ClientLogos from "@/components/home/ClientLogos";
@@ -10,19 +8,10 @@ import Sliderfabrica from "@/components/home/Sliderfabrica";
 import CTASection from "@/components/home/CTASection";
 import FAQSection from "@/components/home/FAQSection";
 import Footer from "@/components/home/Footer";
+import { getContent } from "@/app/lib/content";
 
 export const dynamic = "force-dynamic";
 
-async function getContent() {
-  try {
-    const filePath = path.join(process.cwd(), "data", "content.json");
-    const fileContent = await fs.readFile(filePath, "utf8");
-    return JSON.parse(fileContent);
-  } catch (error) {
-    console.error("Error loading content.json, using defaults.", error);
-    return null;
-  }
-}
 
 export default async function Home() {
   const content = await getContent();

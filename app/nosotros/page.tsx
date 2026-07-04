@@ -1,5 +1,4 @@
-import fs from "fs/promises";
-import path from "path";
+import { getContent } from "@/app/lib/content";
 import Navbar from "@/components/home/Navbar";
 import Stats from "@/components/home/Stats";
 import CTASection from "@/components/home/CTASection";
@@ -8,16 +7,7 @@ import { MessageCircle, ArrowUpRight } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
-async function getContent() {
-  try {
-    const filePath = path.join(process.cwd(), "data", "content.json");
-    const fileContent = await fs.readFile(filePath, "utf8");
-    return JSON.parse(fileContent);
-  } catch (error) {
-    console.error("Error loading content.json in Nosotros page, using defaults.", error);
-    return null;
-  }
-}
+
 
 export default async function Nosotros() {
   const content = await getContent();

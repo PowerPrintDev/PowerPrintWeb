@@ -36,3 +36,22 @@ body {
   font-family: var(--font-geist-sans), Helvetica, Arial, sans-serif;
 }
 
+/* Short viewports (height <= 782px) on desktop (width >= 1024px) */
+@media (max-height: 782px) and (min-width: 1024px) {
+  .hero-section-container {
+    padding-top: 3.5rem !important; /* py-14 instead of py-24 */
+    padding-bottom: 3.5rem !important;
+  }
+  
+  .hero-title-text {
+    font-size: 64px !important; /* 64px instead of 80px/96px */
+    margin-top: 0.5rem !important;
+    transform: translateY(-40px); /* Shift title 40px higher up */
+  }
+  
+  .hero-spacer {
+    height: 180px !important; /* 180px instead of 360px */
+  }
+}
+
+

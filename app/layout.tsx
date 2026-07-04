@@ -1,7 +1,6 @@
+import { getContent } from "@/app/lib/content";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import fs from "fs/promises";
-import path from "path";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,12 +20,10 @@ export const metadata: Metadata = {
 
 async function getThemeColors() {
   try {
-    const filePath = path.join(process.cwd(), "data", "content.json");
-    const fileContent = await fs.readFile(filePath, "utf8");
-    const data = JSON.parse(fileContent);
-    return data.theme;
+    const content = await getContent();
+    return content?.theme || {};
   } catch (error) {
-    return null;
+    return {};
   }
 }
 

@@ -1,5 +1,4 @@
-import fs from "fs/promises";
-import path from "path";
+import { getContent } from "@/app/lib/content";
 import Link from "next/link";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
@@ -16,16 +15,7 @@ type SuccessStory = {
   contentMarkdown?: string;
 };
 
-async function getContent() {
-  try {
-    const filePath = path.join(process.cwd(), "data", "content.json");
-    const fileContent = await fs.readFile(filePath, "utf8");
-    return JSON.parse(fileContent);
-  } catch (error) {
-    console.error("Error loading content.json in Casos de Éxito page.", error);
-    return null;
-  }
-}
+
 
 // Custom simple parser to alternate headings, paragraphs, images and video embeds
 function renderMarkdown(md: string) {

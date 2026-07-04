@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verifyToken } from "@/app/lib/auth";
-import fs from "fs/promises";
-import path from "path";
+import { saveContent } from "@/app/lib/content";
 
 export async function POST(request: Request) {
   try {
@@ -21,9 +20,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Contenido inválido" }, { status: 400 });
     }
 
-    // Write file to filesystem
-    const filePath = path.join(process.cwd(), "data", "content.json");
-    await fs.writeFile(filePath, JSON.stringify(newContent, null, 2), "utf8");
+    // Write file to database and filesystem backup
+    await saveContent(newContent);
 
     return NextResponse.json({ success: true });
   } catch (error) {

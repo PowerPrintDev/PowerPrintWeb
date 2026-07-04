@@ -187,7 +187,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
       const windowHeight = window.innerHeight;
       setWindowSize({ width: windowWidth, height: windowHeight });
       
-      const mobile = windowWidth < 768;
+      const mobile = windowWidth < 1024; // lg breakpoint
       setIsMobile(mobile);
 
       if (showcaseCenterRef.current && containerRef.current) {
@@ -275,7 +275,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
 
 
 
-  const activeCategory = categories.find((c) => c.id === activeFilter) || categories[0];
+  const activeCategory = categories.find((c) => c.id === activeFilter) || categories[0] || { id: "", label: "", title: "", description: "" };
 
   const handleNextCategory = () => {
     const currentIndex = categories.findIndex((c) => c.id === activeFilter);
@@ -293,6 +293,8 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
   const cardTransitionClass = (progress === 0 || isTransitioning)
     ? "transition-all duration-[800ms] cubic-bezier(0.16, 1, 0.3, 1)"
     : "transition-none";
+
+  const isShort = windowSize.height < 782;
 
   return (
     <div ref={containerRef} className="relative w-full">
@@ -341,7 +343,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
 
             // Get base coordinates before scroll transition (apply entrance progress)
             const currentHeroX = isFanned ? hx : sx_stacked;
-            const currentHeroY = isFanned ? hy : sy_stacked;
+            const currentHeroY = (isFanned ? hy : sy_stacked) + (isShort && !isMobile ? 40 : 0);
             const currentHeroRot = isFanned ? hrot : srot_stacked;
 
             // Target Showcase fanned coordinates based on category ordering (peeking slider)
@@ -386,12 +388,14 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
             const ty = currentHeroY + (sy - currentHeroY) * progress;
             const rot = currentHeroRot + (srot - currentHeroRot) * progress;
 
+            const baseScale = (isShort && !isMobile) ? 0.75 : 1;
+
             // Interpolate scale and opacity past 65% scroll
-            let cardScale = 1;
+            let cardScale = baseScale;
             let cardOpacity = idx < 7 ? 1 : 0;
             if (progress > 0.65) {
               const fadeProgress = (progress - 0.65) / 0.35; // 0 to 1
-              cardScale = 1 + (targetScale - 1) * fadeProgress;
+              cardScale = baseScale + (targetScale - baseScale) * fadeProgress;
               
               const startOpacity = idx < 7 ? 1 : 0;
               cardOpacity = startOpacity + (targetOpacity - startOpacity) * fadeProgress;
@@ -403,7 +407,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
             return (
               <div
                 key={idx}
-                className={`absolute shadow-[0px_8px_24px_rgba(0,0,0,0.12)] rounded-xl w-[90px] h-[105px] md:w-[210px] md:h-[235px] overflow-hidden bg-white border border-neutral-200/50 cursor-pointer origin-center ${cardTransitionClass}`}
+                className={`absolute shadow-[0px_8px_24px_rgba(0,0,0,0.12)] rounded-xl w-[90px] h-[105px] lg:w-[210px] lg:h-[235px] overflow-hidden bg-white border border-neutral-200/50 cursor-pointer origin-center ${cardTransitionClass}`}
                 style={{
                   zIndex: matchesFilter && isShowcaseActive ? 40 : 10 + idx,
                   left: "50%",
@@ -430,7 +434,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
 
                 {/* Card Tag overlays (fades in past 40% scroll) */}
                 <div 
-                  className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-neutral-950/80 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[8px] md:text-[10px] whitespace-nowrap font-bold transition-opacity duration-300 select-none border border-white/5 pointer-events-none"
+                  className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-neutral-950/80 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[8px] lg:text-[10px] whitespace-nowrap font-bold transition-opacity duration-300 select-none border border-white/5 pointer-events-none"
                   style={{
                     opacity: progress > 0.4 ? 1 : 0
                   }}
@@ -448,14 +452,14 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
         
         {/* HERO SECTION VIEW (First Page Height) */}
         <div 
-          className="min-h-screen w-full flex flex-col items-center justify-between py-12 md:py-24 px-4 md:px-10 text-center select-none"
+          className="min-h-screen w-full flex flex-col items-center justify-between py-12 lg:py-24 px-4 lg:px-10 text-center select-none hero-section-container"
           style={{
             opacity: 1 - progress * 2.5, // Fades out as you scroll down
             pointerEvents: progress > 0.35 ? "none" : "auto"
           }}
         >
           {/* Main Title Heading */}
-          <h1 className="max-w-[1100px] text-center font-black leading-[1.1] text-4xl md:text-[80px] lg:text-[96px] text-neutral-900 tracking-tight mt-6">
+          <h1 className="max-w-[1100px] text-center font-black leading-[1.1] text-4xl md:text-5xl lg:text-[80px] xl:text-[96px] text-neutral-900 tracking-tight mt-6 hero-title-text">
             {data?.title || "Te ayudamos a materializar"}{" "}
             <span className="bg-gradient-to-r from-orange-main to-red-main bg-clip-text text-transparent inline-block">
               {data?.highlight || "tu marca"}
@@ -463,7 +467,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
           </h1>
 
           {/* Spacer for fanned cards */}
-          <div className="h-[220px] md:h-[360px] pointer-events-none" />
+          <div className="h-[220px] lg:h-[360px] pointer-events-none hero-spacer" />
 
           {/* Action buttons and tagline */}
           <div className="flex flex-col items-center gap-6 w-full mb-6">
@@ -483,7 +487,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
               </a>
             </div>
             
-            <p className="text-sm md:text-lg text-neutral-400 font-semibold tracking-wide">
+            <p className="text-sm lg:text-lg text-neutral-400 font-semibold tracking-wide">
               {data?.tagline || "Power Print & Graphic Solutions"}
             </p>
           </div>
@@ -491,7 +495,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
 
         {/* SHOWCASE SECTION VIEW (Second Page Height) */}
         <div 
-          className="min-h-screen w-full flex items-center px-4 md:px-24 py-16"
+          className="min-h-screen w-full flex items-center px-4 lg:px-24 py-16"
           style={{
             opacity: progress * 2.5 - 1.2, // Fades in as you scroll down
             pointerEvents: progress < 0.6 ? "none" : "auto"
@@ -508,7 +512,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
                   <button
                     key={cat.id}
                     onClick={() => changeFilter(cat.id)}
-                    className={`px-4 py-2 rounded-full text-xs md:text-sm font-bold transition-all cursor-pointer ${
+                    className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold transition-all cursor-pointer ${
                       activeFilter === cat.id
                         ? "bg-orange-main text-white shadow-md shadow-orange-main/15"
                         : "bg-white/60 hover:bg-white text-neutral-600 border border-neutral-200/50"
@@ -524,10 +528,10 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
                 <span className="text-xs font-black uppercase tracking-widest text-orange-600">
                   Nuestros Socios
                 </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-neutral-900 leading-tight">
+                <h2 className="text-2xl lg:text-4xl font-extrabold text-neutral-900 leading-tight">
                   Empresas que crecen con nosotros
                 </h2>
-                <p className="text-sm md:text-base text-neutral-500 leading-relaxed font-medium">
+                <p className="text-sm lg:text-base text-neutral-500 leading-relaxed font-medium">
                   Acompañamos a organizaciones de diferentes industrias en sus iniciativas publicitarias e innovación tecnológica.
                 </p>
 
@@ -545,7 +549,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
               {/* Badge */}
               <div className="flex items-center justify-center lg:justify-start mt-2">
                 <div className="bg-gradient-to-r from-orange-main to-red-main px-6 py-3 rounded-full flex items-center gap-2 shadow-lg shadow-orange-main/10 hover:scale-[1.02] transition-transform cursor-pointer">
-                  <span className="text-xs md:text-sm font-bold text-neutral-50 whitespace-nowrap">
+                  <span className="text-xs lg:text-sm font-bold text-neutral-50 whitespace-nowrap">
                     Solicitar Info
                   </span>
                   <ArrowUpRight className="w-4 h-4 text-white" />
@@ -554,7 +558,7 @@ export default function HeroAndShowcase({ data }: HeroAndShowcaseProps) {
 
             </div>
             {/* Right Column: Contains the target center ref for the cards */}
-            <div ref={showcaseCenterRef} className="lg:col-span-7 h-[200px] md:h-[450px] pointer-events-none relative flex items-center justify-center" />
+            <div ref={showcaseCenterRef} className="lg:col-span-7 h-[200px] lg:h-[450px] pointer-events-none relative flex items-center justify-center" />
 
           </div>
         </div>

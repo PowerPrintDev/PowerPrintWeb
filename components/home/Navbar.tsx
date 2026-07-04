@@ -100,23 +100,22 @@ export default function Navbar({ data, categories: propCategories }: NavbarProps
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full px-4 md:px-10 py-6 flex justify-center bg-transparent backdrop-blur-[10px]">
+    <header className="sticky top-0 z-50 w-full px-4 lg:px-10 py-6 flex justify-center bg-transparent backdrop-blur-[10px]">
       <div className="w-full max-w-7xl bg-neutral-950/95 text-white flex items-center justify-between px-6 py-3 rounded-full shadow-lg border border-white/5 transition-all duration-300">
 
         {/* Logo Section */}
-        {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-3 select-none">
-          <div className="h-10 md:h-14 flex items-center">
+        <Link href="/" className="flex items-center gap-3 select-none flex-shrink-0">
+          <div className="h-10 lg:h-14 flex items-center">
             <img
               alt="Power Print Logo"
-              className="h-10 md:h-12 object-contain"
+              className="h-10 lg:h-12 object-contain flex-shrink-0"
               src={logo}
             />
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-2">
+        <nav className="hidden lg:flex items-center gap-2">
           {links.map((link) => {
             const Icon = iconMap[link.label] || Briefcase;
             const isProducts = link.label === "Productos";
@@ -192,7 +191,7 @@ export default function Navbar({ data, categories: propCategories }: NavbarProps
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex items-center justify-center p-2 text-neutral-50 hover:bg-white/10 rounded-full focus:outline-none transition-colors duration-200"
+          className="lg:hidden flex items-center justify-center p-2 text-neutral-50 hover:bg-white/10 rounded-full focus:outline-none transition-colors duration-200"
           aria-label="Toggle Menu"
         >
           {isOpen ? (
@@ -205,7 +204,7 @@ export default function Navbar({ data, categories: propCategories }: NavbarProps
 
       {/* Mobile Drawer Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden" onClick={() => setIsOpen(false)}>
+        <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden" onClick={() => setIsOpen(false)}>
           {/* Mobile Drawer Content */}
           <div
             className="absolute top-24 right-4 left-4 p-6 bg-neutral-950/95 border border-white/10 rounded-2xl flex flex-col gap-4 shadow-2xl transition-all transform duration-300 ease-out"
