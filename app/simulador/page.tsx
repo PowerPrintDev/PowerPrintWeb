@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { Settings, Image as ImageIcon, Lightbulb, Download } from 'lucide-react';
 import { toPng } from 'html-to-image';
-import content from '../../data/content.json';
+import content from '@/data/content.json';
 
 export default function SimuladorPage() {
   const [text, setText] = useState("POWERPRINT");
