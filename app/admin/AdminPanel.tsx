@@ -589,13 +589,34 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
 
   const updateListItem = (section: string, listKey: string, index: number, field: string, value: any) => {
     setContent((prev: any) => {
-      const list = [...prev[section][listKey]];
+      const arr = prev[section]?.[listKey];
+      const list = Array.isArray(arr) ? [...arr] : [];
+      if (!list[index]) list[index] = {};
       list[index] = { ...list[index], [field]: value };
       return {
         ...prev,
         [section]: {
           ...prev[section],
           [listKey]: list
+        }
+      };
+    });
+  };
+
+  const updateNestedListItem = (section: string, subsection: string, listKey: string, index: number, field: string, value: any) => {
+    setContent((prev: any) => {
+      const arr = prev[section]?.[subsection]?.[listKey];
+      const list = Array.isArray(arr) ? [...arr] : [];
+      if (!list[index]) list[index] = {};
+      list[index] = { ...list[index], [field]: value };
+      return {
+        ...prev,
+        [section]: {
+          ...prev[section],
+          [subsection]: {
+            ...prev[section]?.[subsection],
+            [listKey]: list
+          }
         }
       };
     });
@@ -2109,7 +2130,7 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
                             <input
                               type="text"
                               value={step.title}
-                              onChange={(e) => updateListItem("aboutPage", "process", idx, "title", e.target.value)}
+                              onChange={(e) => updateNestedListItem("aboutPage", "process", "steps", idx, "title", e.target.value)}
                               className="w-full bg-neutral-900 border border-white/5 rounded-lg py-2 px-3 text-xs font-semibold text-neutral-100 focus:outline-none"
                             />
                           </div>
@@ -2118,7 +2139,7 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
                             <input
                               type="text"
                               value={step.description}
-                              onChange={(e) => updateListItem("aboutPage", "process", idx, "description", e.target.value)}
+                              onChange={(e) => updateNestedListItem("aboutPage", "process", "steps", idx, "description", e.target.value)}
                               className="w-full bg-neutral-900 border border-white/5 rounded-lg py-2 px-3 text-xs font-semibold text-neutral-100 focus:outline-none"
                             />
                           </div>
@@ -2165,7 +2186,7 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
                             <input
                               type="text"
                               value={card.icon}
-                              onChange={(e) => updateListItem("aboutPage", "quality", idx, "icon", e.target.value)}
+                              onChange={(e) => updateNestedListItem("aboutPage", "quality", "cards", idx, "icon", e.target.value)}
                               className="w-full text-center bg-neutral-900 border border-white/5 rounded-lg py-1.5 px-2 text-sm font-semibold text-neutral-100 focus:outline-none"
                             />
                           </div>
@@ -2174,7 +2195,7 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
                             <input
                               type="text"
                               value={card.title}
-                              onChange={(e) => updateListItem("aboutPage", "quality", idx, "title", e.target.value)}
+                              onChange={(e) => updateNestedListItem("aboutPage", "quality", "cards", idx, "title", e.target.value)}
                               className="w-full bg-neutral-900 border border-white/5 rounded-lg py-1.5 px-3 text-xs font-semibold text-neutral-100 focus:outline-none"
                             />
                           </div>
@@ -2184,7 +2205,7 @@ export default function AdminPanel({ initialContent }: AdminPanelProps) {
                           <textarea
                             rows={2}
                             value={card.description}
-                            onChange={(e) => updateListItem("aboutPage", "quality", idx, "description", e.target.value)}
+                            onChange={(e) => updateNestedListItem("aboutPage", "quality", "cards", idx, "description", e.target.value)}
                             className="w-full bg-neutral-900 border border-white/5 rounded-lg py-1.5 px-3 text-xs font-semibold text-neutral-100 focus:outline-none resize-none"
                           />
                         </div>
